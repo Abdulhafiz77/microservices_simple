@@ -1,0 +1,45 @@
+syntax = "proto3";
+import "../../base/request-params.proto";
+import "../../base/success-responce.proto";
+
+service UserService {
+  rpc getAll (ParamsGetAll) returns (Users) {}
+  rpc getById (ParamsId) returns (User) {}
+  rpc create (SaveMerchantUser) returns (User) {}
+  rpc update (SaveMerchantUser) returns (User) {}
+  rpc delete (ParamsId) returns (SuccessResponce) {}
+}
+
+message Users {
+  repeated User items = 1;
+}
+
+message User {
+  int32 id = 1;
+  optional string password = 2;
+  string first_name = 3;
+  string last_name = 4;
+  optional string middle_name = 5;
+  string phone = 6;
+  string email = 7;
+  optional string created_at = 8;
+  optional string updated_at = 9;
+  optional int32 status = 10;
+  optional int32 count = 11;
+}
+
+message SaveMerchantUser {
+  optional int32 id = 1;
+  string password = 2;
+  string phone = 3;
+  string first_name = 4;
+  string last_name = 5;
+  optional string middle_name = 6;
+  string email = 7;
+  optional int32 status = 8;
+}
+
+message ParamsGetAll {
+  optional int32 limit = 1;
+  optional int32 page = 2;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "route-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "watch": "nodemon -e ts  --exec npm start"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.4",
+    "@grpc/proto-loader": "^0.7.12",
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-joi-validation": "^5.0.1",
+    "http-status-codes": "^1.4.0",
+    "joi": "^17.12.2",
+    "morgan": "^1.10.0",
+    "typescript": "^5.4.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.2",
+    "nodemon": "^3.1.0"
+  }
+}
